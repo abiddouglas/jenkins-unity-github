@@ -11,7 +11,7 @@ namespace Script.Editor
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
-            buildPlayerOptions.locationPathName = "C:\\Users\\abids\\Desktop\\Builds";
+            buildPlayerOptions.locationPathName = "Builds";
             buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
             buildPlayerOptions.options = BuildOptions.None;
 
