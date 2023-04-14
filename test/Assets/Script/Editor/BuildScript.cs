@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
-
-public class BuildScript 
+namespace Script.Editor
 {
-    static void BuildWindows()
+    public class BuildScript
     {
-        BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
-        buildPlayerOptions.locationPathName = "C:\\Users\\abids\\Desktop\\Builds";
-        buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
-        buildPlayerOptions.options = BuildOptions.None;
-
-        BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-        BuildSummary summary = report.summary;
-
-        if (summary.result == BuildResult.Succeeded)
+        public static void BuildWindows()
         {
-            Debug.Log("Build succeeded: " + summary.totalSize + " bytes");
+            BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
+            buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
+            buildPlayerOptions.locationPathName = "C:\\Users\\abids\\Desktop\\Builds";
+            buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
+            buildPlayerOptions.options = BuildOptions.None;
+
+            BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+            BuildSummary summary = report.summary;
+
+            if (summary.result == BuildResult.Succeeded)
+            {
+                Debug.Log("Build succeeded: " + summary.totalSize + " bytes");
+            }
+
+            if (summary.result == BuildResult.Failed)
+            {
+                Debug.Log("Build failed");
+            }
         }
 
-        if (summary.result == BuildResult.Failed)
-        {
-            Debug.Log("Build failed");
-        }
     }
-    
 }
