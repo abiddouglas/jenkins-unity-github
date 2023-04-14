@@ -11,13 +11,14 @@ namespace Script.Editor
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
-            buildPlayerOptions.locationPathName = "Builds";
+            //buildPlayerOptions.locationPathName = "Builds";
             buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
             buildPlayerOptions.options = BuildOptions.None;
 
             BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
             BuildSummary summary = report.summary;
-
+            
+            Debug.Log($"Build POST {buildPlayerOptions.locationPathName}");
             if (summary.result == BuildResult.Succeeded)
             {
                 Debug.Log("Build succeeded: " + summary.totalSize + " bytes");
