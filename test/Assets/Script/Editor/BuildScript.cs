@@ -13,7 +13,7 @@ namespace Script.Editor
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
             buildPlayerOptions.locationPathName = "C:\\Users\\Abidali\\Desktop\\BuildsJenkins\\";
-            buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
+            buildPlayerOptions.target = BuildTarget.StandaloneWindows;
             buildPlayerOptions.options = BuildOptions.None;
 
             BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
