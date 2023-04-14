@@ -9,9 +9,10 @@ namespace Script.Editor
     {
         public static void BuildWindows()
         {
+            File.Cre
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
-            buildPlayerOptions.locationPathName = "../Builds";
+            buildPlayerOptions.locationPathName = "C:\\Users\\Abidali\\Desktop\\BuildsJenkins\\";
             buildPlayerOptions.target = BuildTarget.StandaloneWindows64;
             buildPlayerOptions.options = BuildOptions.None;
 
