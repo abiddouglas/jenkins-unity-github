@@ -9,10 +9,10 @@ namespace Script.Editor
     {
         public static void BuildWindows()
         {
-            File.Cre
+            AssetDatabase.CreateFolder("Assets","Assets/Builds/");
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Main.unity" };
-            buildPlayerOptions.locationPathName = "Assets/Builds";
+            buildPlayerOptions.locationPathName = "Assets/Builds/";
             buildPlayerOptions.target = BuildTarget.StandaloneWindows;
             buildPlayerOptions.options = BuildOptions.None;
 
